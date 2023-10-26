@@ -1,0 +1,7 @@
+.weather-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 8px;
+}

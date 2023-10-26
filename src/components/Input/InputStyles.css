@@ -1,0 +1,11 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+.weather-input {
+    padding: 2.5%;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: none;
+}

@@ -1,0 +1,28 @@
+.weather-display {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+}
+
+.back-button {
+  width: 25%;
+  padding: 8px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.back-img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 66%;
+  transform: translateY(-50%);
+}
+
+.weather-header {
+  display: flex;
+  justify-content: flex-start;
+}

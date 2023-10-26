@@ -3,6 +3,7 @@ import './WeatherStyles.css'
 import Input from '../Input/Input'
 import WeatherDisplay from '../WeatherDisplay/WeatherDisplay'
 
+// exporting because we use it in the WeatherDisplay component too
 export interface WeatherData {
   current: {
     temp_c: number;
@@ -26,10 +27,10 @@ This component handles state and renders components
 */
 
 export default function Weather() {
-  const [isActive, setActive] = useState(false) // Show/hide the weather display
+  const [isActive, setActive] = useState(false) // show/hide the weather display
   const [weatherData, setWeatherData] = useState<WeatherData>() // store data
 
-  // Function which fetches weather data for the respective location
+  // function which fetches weather data for the respective location
   const getWeather = async (location: string) => {
     try {
       const response = await fetch(
@@ -40,6 +41,7 @@ export default function Weather() {
       // if the response returns an error we throw it so it can be handled
       if (data?.error) {throw new Error(data.error)}
       
+      // open the weather display & store the weather data
       setActive(true);
       setWeatherData(data);
     }catch(err) {
@@ -49,7 +51,7 @@ export default function Weather() {
   };
 
   return(
-    <div data-open={isActive ? true : null} className='weather-wrapper'>
+    <div className='weather-wrapper'>
       {
         isActive && weatherData ?
         <WeatherDisplay weatherData={weatherData} goBack={() => setActive(false)}/> :
